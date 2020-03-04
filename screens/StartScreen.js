@@ -18,7 +18,6 @@ const StartScreen = props => {
         source={require("../assets/large-cloud.png")}
       />
       <Image style={styles.sun} source={require("../assets/sun.png")} />
-      <Image style={styles.forest} source={require("../assets/forest.png")} />
       <View style={styles.article}>
         <Text style={styles.h1}>Laipni lūgti </Text>
         <Text style={styles.p}>
@@ -26,7 +25,14 @@ const StartScreen = props => {
         </Text>
       </View>
       <View style={styles.btn}>
-        <Button title="Uz novērtētēšanu" color="#fff" />
+        <Button title="Uz novērtētēšanu" color="white" />
+      </View>
+      <Image style={styles.forest} source={require("../assets/forest.png")} />
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>
+          Mežsaimniecības uzņēmums BM Wood darbību uzsācis 1993.gadā un vairāk
+          nekā 22 gadus apsaimnieko meža īpašumus un cirsmas visā Latvijā.
+        </Text>
       </View>
     </View>
   )
@@ -40,32 +46,34 @@ const styles = StyleSheet.create({
     position: "relative"
   },
   article: {
-    width: 300,
+    width: 240,
     maxWidth: "80%",
     alignItems: "center",
     flex: 1,
     justifyContent: "center",
-    marginBottom: 100
+    marginTop: 50
   },
   h1: {
     fontSize: 24,
     marginBottom: 20,
-    color: Colors.accent
+    color: Colors.dark,
+    textAlign: "center"
   },
   p: {
     fontSize: 18,
     fontWeight: "200",
     lineHeight: 24,
-    color: Colors.accent
+    color: Colors.dark,
+    textAlign: "center"
   },
   btn: {
-    backgroundColor: Colors.accent,
+    backgroundColor: Colors.dark,
     height: 52,
+    width: 320,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 50,
-    paddingHorizontal: 70,
-    marginBottom: 200
+    borderRadius: 10,
+    marginBottom: 180
   },
   smallCloud: {
     position: "absolute",
@@ -86,9 +94,25 @@ const styles = StyleSheet.create({
   },
   forest: {
     position: "absolute",
-    bottom: 20,
+    bottom: 69,
     width: "100%",
-    overflow: "visible"
+    overflow: "visible",
+    zIndex: -1
+  },
+  footer: {
+    position: "absolute",
+    bottom: 0,
+    height: 70,
+    backgroundColor: Colors.accent,
+    width: "100%",
+    paddingHorizontal: 16,
+    paddingVertical: 5
+  },
+  footerText: {
+    fontSize: 12,
+    fontWeight: "300",
+    lineHeight: 20,
+    color: Colors.dark
   }
 })
 
