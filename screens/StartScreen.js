@@ -5,7 +5,10 @@ import Colors from "../constants/colors"
 const StartScreen = props => {
   return (
     <View style={styles.screen}>
-      <Image source={require("../assets/bmwood-logo.png")} />
+      <Image
+        source={require("../assets/bmwood-logo.png")}
+        style={styles.logo}
+      />
       <Image
         style={styles.smallCloud}
         source={require("../assets/small-cloud.png")}
@@ -46,12 +49,14 @@ const styles = StyleSheet.create({
   },
   h1: {
     fontSize: 24,
-    marginBottom: 20
+    marginBottom: 20,
+    color: Colors.accent
   },
   p: {
     fontSize: 18,
     fontWeight: "200",
-    lineHeight: 24
+    lineHeight: 24,
+    color: Colors.accent
   },
   btn: {
     backgroundColor: Colors.accent,
@@ -59,7 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 50,
-    paddingHorizontal: 40,
+    paddingHorizontal: 70,
     marginBottom: 200
   },
   smallCloud: {
